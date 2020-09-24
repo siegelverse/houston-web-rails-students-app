@@ -1,0 +1,10 @@
+<h1><%= @student.name %></h1>
+<hr>
+<p>Major : <%= @student.major %></p> 
+<br> 
+<p>Age: <%= @student.age %></p> 
+<br> 
+<p> Instructor: <%= link_to @student.instructor.name, instructor_path(@student.instructor) %>
+<br>
+<a href="<%=edit_student_path%>"><button type="button">Edit Student</button></a>
+<%= button_to "Delete Student", {:controller => :students, :action => 'destroy', :id => @student.id }, :method => :delete %>

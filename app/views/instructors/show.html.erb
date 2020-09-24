@@ -1,0 +1,10 @@
+<h1><%= @instructor.name %></h1>
+<hr>
+<p>
+    <% @instructor.students.each do |student| %> 
+        <li><%= link_to student.name, student_path(student.id) %></li>
+    <% end %> 
+</p>  
+<br>
+<a href="<%=edit_instructor_path%>"><button type="button">Edit Instructor</button></a>
+<%= button_to "Delete Instructor", {:controller => :instructors, :action => 'destroy', :id => @instructor.id }, :method => :delete %>

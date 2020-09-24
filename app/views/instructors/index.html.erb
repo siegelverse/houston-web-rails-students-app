@@ -1,0 +1,7 @@
+<h1>Instructors</h1>
+<hr>
+
+<% @instructors.each do |inst| %> 
+    <li><%= link_to inst.name, instructor_path(inst.id) %></li> 
+<% end %> 
+<a href="<%=new_instructor_path%>"><button type="button">New Instructor</button></a>
